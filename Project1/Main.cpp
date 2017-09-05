@@ -73,24 +73,25 @@ void testArrays(int a[], int numOfElements)
 
 // Definition of function deleteDuplicates
 void deleteDuplicates(int arr[], int &size) {
-	int newArrSize = size;
+	int newArrSize = size; // Creating new variable with array's starting size
 	for (unsigned int i = 0; i < size; i++) {
-		int searchInt = arr[i];
+		int searchInt = arr[i]; // Assign int with value of searching index
 		for (unsigned int y = i + 1; y < size; y++) {
-			if (arr[y] == searchInt) {
-				newArrSize--;
-				for (unsigned int j = y; j < size - 1; j++) {
+			if (arr[y] == searchInt) { // If searching value is equal to current index
+				newArrSize--; // Decrease size of array
+				for (unsigned int j = y; j < size - 1; j++) { // Remove current value and shift all following values to the left by one
 					arr[j] = arr[j + 1];
 				}
 			}
 		}
-		size = newArrSize;
+		size = newArrSize; // Replace array size with new array size
 	}
 }
 // Definition of function printArray
 void printArray(int arr[], int &size) {
-	if (size < 1) cout << "Array is empty.";
-	else 
+	// Checks to see if array has any occupation
+	if (size < 1) cout << "Array is empty."; // If not print
+	else  // If it does have values, print each value
 		for (unsigned int i = 0; i < size; i++) {
 			cout << arr[i] << " ";
 		}
