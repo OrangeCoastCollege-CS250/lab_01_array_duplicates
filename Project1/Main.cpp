@@ -1,5 +1,10 @@
 /*
-	(name header)
+	Badajoz, Severiano
+
+	CS A250
+	September 5, 2017
+
+	Lab 1
 */
 
 #include <iostream>
@@ -10,12 +15,12 @@ using namespace std;
 
 const int CAP = 20;
 
-void testArrays(int a[], int numOfElements);
+void testArrays(int a[], const int numOfElements);
 
 // Declaration of function deleteDuplicates
-
+void deleteDuplicates(int arr[], unsigned int size);
 // Declaration of function printArray
-
+void printArray(int arr[], unsigned int size);
 int main()
 {
 	int a1[CAP],
@@ -67,5 +72,22 @@ void testArrays(int a[], int numOfElements)
 }
 
 // Definition of function deleteDuplicates
-
+void deleteDuplicates(int arr[], int size) {
+	int newArrSize = size;
+	for (unsigned int i = 0; i < size; i++) {
+		int searchInt = arr[i];
+		for (unsigned int y = i + 1; y < size; y++) {
+			if (arr[y] == searchInt) {
+				newArrSize--;
+				for (unsigned int j = y; j < size - 1; j++) {
+					arr[j] = arr[j + 1];
+				}
+			}
+		}
+		size = newArrSize;
+	}
+}
 // Definition of function printArray
+void printArray(int arr[], unsigned int size) {
+
+}
