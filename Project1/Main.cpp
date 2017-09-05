@@ -18,9 +18,9 @@ const int CAP = 20;
 void testArrays(int a[], const int numOfElements);
 
 // Declaration of function deleteDuplicates
-void deleteDuplicates(int arr[], unsigned int size);
+void deleteDuplicates(int arr[], int &size);
 // Declaration of function printArray
-void printArray(int arr[], unsigned int size);
+void printArray(int arr[], int &size);
 int main()
 {
 	int a1[CAP],
@@ -72,7 +72,7 @@ void testArrays(int a[], int numOfElements)
 }
 
 // Definition of function deleteDuplicates
-void deleteDuplicates(int arr[], int size) {
+void deleteDuplicates(int arr[], int &size) {
 	int newArrSize = size;
 	for (unsigned int i = 0; i < size; i++) {
 		int searchInt = arr[i];
@@ -88,6 +88,10 @@ void deleteDuplicates(int arr[], int size) {
 	}
 }
 // Definition of function printArray
-void printArray(int arr[], unsigned int size) {
-
+void printArray(int arr[], int &size) {
+	if (size < 1) cout << "Array is empty.";
+	else 
+		for (unsigned int i = 0; i < size; i++) {
+			cout << arr[i] << " ";
+		}
 }
